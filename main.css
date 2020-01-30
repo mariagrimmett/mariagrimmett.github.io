@@ -6,15 +6,11 @@
   --header-padding: 80px;
   --section-padding: 20px;
 
-  --bg-color: #E8E8E8;
-  --text-color: #2A2A2A;
-  --bg-a: rgb(161, 106, 57);
-  --bg-b: rgb(0, 109, 189);
-  --bg-c: rgb(91, 168, 142);
+  --bg-color: #FFFFFF;
+  --text-color: #111111;
+  --accent-color-a: #285133;
+  --accent-color-b: #28486D;
   --link-color: var(--bg-a);
-
-  --line-width: 15px;
-  --line-padding: 15px;
 }
 
 /* General */
@@ -38,6 +34,8 @@ body {
   font-family: "Lora", serif;
   font-size: 17px;
 
+  padding-bottom: var(--section-padding);
+
   overflow-x: hidden;
 }
 
@@ -46,7 +44,7 @@ header {
 }
 
 section {
-  padding: var(--section-padding);
+  padding: 0 var(--section-padding);
 }
 
 header > div, section > div {
@@ -59,67 +57,37 @@ h1, h2, h3 {
 }
 
 a {
-  color: var(--link-color);
-}
-
-/* Fancy Underline */
-/* http://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
-
-.fancy-underline {
-  position: relative;
+  color: var(--accent-color-b);
   text-decoration: none;
 }
 
-.fancy-underline:hover {
-  text-decoration: none;
-}
-
-.fancy-underline:before {
-  content: "";
-
-  width: 100%;
-  height: 1px;
-
-  background-color: red; /* override per-location! */
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.2s cubic-bezier(0.20, 1, 0.20, 1) 0s;
-}
-
-.fancy-underline:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
-a.fancy-underline:before {
-  background-color: var(--link-color);
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
 /* Header */
 
 #main-header {
-  background-image: url("header.jpg");
+  background-image: url("img/header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  border-bottom: 1px solid var(--accent-color-a);
 }
 
 #card {
-  background-color: rgba(232, 232, 232, 0.95);
+  background-color: var(--bg-color);
+  border: 1px solid #285133;
   border-radius: 5px;
   padding: 20px;
   display: flex;
   flex-direction: row;
 }
 
-#card #img {
+#profile {
   width: 200px;
   height: 200px;
-  background-color: rgba(200, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 #info {
@@ -155,46 +123,22 @@ a.fancy-underline:before {
 
 /* Sections */
 
-section > div {
-  position: relative;
-}
-
-section > div:before {
-  content: "";
-
-  display: block;
-  width: var(--line-width);
-  height: 100%;
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: calc(0px - var(--line-width) - var(--line-padding));
-}
-
-section:nth-of-type(3n+1) > div:before {
-  background-color: var(--bg-a);
-}
-
-section:nth-of-type(3n+2) > div:before {
-  background-color: var(--bg-b);
-}
-
-section:nth-of-type(3n) > div:before {
-  background-color: var(--bg-c);
-}
-
 section h2 {
   font-size: 1.5em;
-  margin-bottom: 10px;
+  margin: 20px 0 10px 0;
+  padding-bottom: 5px;
+  color: var(--accent-color-a);
+  border-bottom: 2px solid var(--accent-color-a);
 }
 
 section h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  margin-bottom: 10px;
 }
 
 section p {
   line-height: 1.5em;
+  margin-bottom: 10px;
 }
 
 section li {
@@ -203,8 +147,15 @@ section li {
 
 /* Publications */
 
-#publications li > * {
+#publications li h4 {
+  font-size: 1.1em;
+  line-height: 1.3em;
+  font-weight: bold;
   margin-bottom: 5px;
+}
+
+#publications li p {
+  margin-bottom: 0px;
 }
 
 #publications li u {
@@ -213,25 +164,6 @@ section li {
 
 #publications li i {
   font-style: italic;
-}
-
-/* Projects */
-
-#projects h3 {
-  margin-bottom: 10px;
-}
-
-/* News */
-
-#news li > p:first-child {
-  width: 100px;
-  text-align: right;
-  float: left;
-  font-style: italic;
-}
-
-#news li > p:last-child {
-  margin-left: 120px;
 }
 
 /* Media Queries */
