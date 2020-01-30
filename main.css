@@ -4,7 +4,6 @@
   --main-width: 720px;
   --main-padding: 40px;
   --header-padding: 80px;
-  --section-padding: 20px;
 
   --bg-color: #FFFFFF;
   --text-color: #111111;
@@ -34,17 +33,17 @@ body {
   font-family: "Lora", serif;
   font-size: 17px;
 
-  padding-bottom: var(--section-padding);
+  padding-bottom: var(--main-padding);
 
   overflow-x: hidden;
 }
 
 header {
-  padding: var(--header-padding) var(--section-padding);
+  padding: var(--header-padding) var(--main-padding);
 }
 
 section {
-  padding: 0 var(--section-padding);
+  padding: 0 var(--main-padding);
 }
 
 header > div, section > div {
@@ -183,13 +182,5 @@ section li {
 
   #info h1 {
     text-align: center;
-  }
-
-  header {
-    padding: var(--header-padding) var(--main-padding);
-  }
-
-  section {
-    padding: var(--section-padding) var(--main-padding);
   }
 }
