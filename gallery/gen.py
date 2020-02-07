@@ -24,4 +24,4 @@ def item(title, medium):
   <p><i>{medium}.</i></p>
 </li>"""
 
-print(*(item(entry[0], entry[1]) for entry in data), sep="\n\n")
+print(*(item(*entry) for entry in data), sep="\n\n")
