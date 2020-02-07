@@ -174,7 +174,7 @@ section li {
 
   #gallery .collection::after {
     content: "";
-    flex: 0 0 33%;
+    flex: 0 0 32%;
   }
 
 #gallery li {
