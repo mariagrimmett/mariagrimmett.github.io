@@ -9,7 +9,9 @@
   --text-color: #111111;
   --accent-color-a: #285133;
   --accent-color-b: #28486D;
-  --link-color: var(--bg-a);
+  --accent-color-b-translucent: rgba(40, 72, 109, 0.7);
+
+  --round-corners: 5px;
 }
 
 /* General */
@@ -76,7 +78,7 @@ a {
 #card {
   background-color: var(--bg-color);
   border: 1px solid #285133;
-  border-radius: 5px;
+  border-radius: var(--round-corners);
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -142,31 +144,100 @@ section li {
   margin-top: 15px;
 }
 
-/* Publications */
+/* Collections */
 
-#publications li h4 {
+.collection li h4 {
   font-size: 1.1em;
   line-height: 1.3em;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-#publications li p {
+.collection li p {
   margin-bottom: 0px;
 }
 
-#publications li u {
+.collection li u {
   text-decoration: underline;
 }
 
-#publications li i {
+.collection li i {
   font-style: italic;
+}
+
+/* Gallery */
+
+#gallery .collection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+  #gallery .collection::after {
+    content: "";
+    flex: 0 0 32%;
+  }
+
+#gallery li {
+  flex: 0 0 32%;
+  max-width: 500px;
+  min-width: 125px;
+  margin: 0 0 15px 0;
+}
+
+#gallery a {
+  display: block;
+  margin-bottom: 5px;
+
+  border-radius: var(--round-corners);
+  overflow: hidden;
+
+  position: relative;
+}
+
+  #gallery a::after {
+    content: "Click to see full image.";
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--accent-color-b-translucent);
+    color: #FFFFFF;
+    font-style: italic;
+
+    position: absolute;
+    top: 100%;
+
+    transition: top 0.25s;
+  }
+
+  #gallery a:hover::after {
+    top: 0;
+  }
+
+#gallery img {
+  display: block;
+  width: 100%;
+}
+
+#gallery h4 {
+  margin-bottom: 0px;
+}
+
+#gallery li > *:not(a) {
+  margin-left: 5px;
 }
 
 /* Media Queries */
 
 /* MainWidth + 2 * MainPadding */
 @media(max-width: 800px) {
+  /* Header */
+
   #card {
     flex-direction: column;
   }
@@ -181,5 +252,15 @@ section li {
 
   #info h1 {
     text-align: center;
+  }
+}
+
+@media(max-width: 500px) {
+  #gallery .collection::after {
+    flex: 0;
+  }
+
+  #gallery li {
+    flex: 0 0 100%;
   }
 }
