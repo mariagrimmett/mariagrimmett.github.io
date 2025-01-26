@@ -32,7 +32,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 
-  font-family: "Lora", serif;
+  font-family: "PT Sans", sans-serif;
   font-size: 17px;
 
   padding-bottom: var(--main-padding);
@@ -54,7 +54,7 @@ header > div, section > div {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Muli", sans-serif;
+  font-family: "Lora", serif; 
   font-weight: 700;
 }
 
@@ -77,7 +77,7 @@ a {
 
 #card {
   background-color: var(--bg-color);
-  border: 1px solid #285133;
+  border: 1px solid var(--accent-color-b);
   border-radius: var(--round-corners);
   padding: 20px;
   display: flex;
@@ -103,7 +103,7 @@ a {
 
 #info h1,
 #info li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 #info li .icon {
@@ -123,7 +123,7 @@ a {
 /* Sections */
 
 section h2 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin: 20px 0 10px 0;
   padding-bottom: 5px;
   color: var(--accent-color-a);
@@ -136,7 +136,7 @@ section h3 {
 }
 
 section p {
-  line-height: 1.5em;
+  line-height: 1.5;
   margin-bottom: 10px;
 }
 
@@ -147,9 +147,9 @@ section li {
 /* Collections */
 
 .collection li h4 {
-  font-size: 1.1em;
-  line-height: 1.3em;
+  font-size 1.1em;
   font-weight: bold;
+  line-height: 1.4;
   margin-bottom: 5px;
 }
 
